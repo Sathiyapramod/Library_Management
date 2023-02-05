@@ -36,3 +36,21 @@
     transform: rotate(360deg);
   }
 }
+.card{
+  width: 20rem;
+  height: 15rem;
+  background-color: cornflowerblue;
+}
+.userstable{
+  width:45%;
+  scroll-behavior: auto;
+  padding: 10px;
+  margin: 10px;
+}
+.newbooks{
+  width:55%;
+  scroll-behavior: auto;
+  padding: 10px;
+  margin: 10px;
+}
+
