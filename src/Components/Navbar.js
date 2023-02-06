@@ -26,8 +26,8 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { Link } from "react-router-dom";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
-import WbSunnyIcon from '@mui/icons-material/WbSunny';
-import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
+import WbSunnyIcon from "@mui/icons-material/WbSunny";
+import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 
 const drawerWidth = 250;
 
@@ -114,7 +114,9 @@ export default function Navbar() {
               <IconButton color="inherit">
                 <NotificationsActiveIcon />
               </IconButton>
-              <Button color="inherit">Add Book </Button>
+              <Link to="/addbook" style={styling}>
+                <Button color="inherit">Add Book </Button>
+              </Link>
               <Button
                 color="inherit"
                 id="basic-button"
@@ -129,7 +131,8 @@ export default function Navbar() {
                   Admin {flag ? <ExpandLessIcon /> : <ExpandMoreIcon />}
                 </span>
               </Button>
-              <Button color="inherit"
+              <Button
+                color="inherit"
                 onClick={() => {
                   setJump(!jump);
                 }}
@@ -145,9 +148,13 @@ export default function Navbar() {
                   "aria-labelledby": "basic-button",
                 }}
               >
-                <MenuItem onClick={handleClose}>Profile</MenuItem>
-                <MenuItem onClick={handleClose}>My account</MenuItem>
-                <MenuItem onClick={handleClose}>Logout</MenuItem>
+                {["Profile", "My Account", "Logout"].map((element, index) => {
+                  return (
+                    <MenuItem key={index} onClick={handleClose}>
+                      {element}
+                    </MenuItem>
+                  );
+                })}
               </Menu>
             </div>
           </Toolbar>
