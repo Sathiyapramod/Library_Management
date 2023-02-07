@@ -76,7 +76,7 @@ export function ListOfBooks() {
                         <TableCell align="center">
                           <Button
                             onClick={() => {
-                              navigate("/viewbook/" + index);
+                              navigate(`/books/${element.id}`);
                             }}
                           >
                             View Details

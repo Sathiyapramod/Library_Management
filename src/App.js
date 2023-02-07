@@ -10,6 +10,7 @@ import IssuedBooks from "./Components/IssuedBooks";
 import TermsConditions from "./Components/TermsConditions";
 import About from "./Components/About";
 import { PageNotFound } from "./Components/PageNotFound";
+import Addbook from "./Components/Addbook";
 
 function App() {
   return (
@@ -26,10 +27,11 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/books" element={<ListOfBooks />} />
-            <Route path="/viewbook/:id" element={<Viewbook />} />
+            <Route path="/books/:bookid" element={<Viewbook />} />
             <Route path="/issued" element={<IssuedBooks />} />
             <Route path="/about" element={<About />} />
             <Route path="/tnc" element={<TermsConditions />} />
+            <Route path="/addbook" element={<Addbook />} />
             <Route path="/404" element={<PageNotFound />} />
             <Route path="*" element={<Navigate replace to={"/404"} />} />
           </Routes>
